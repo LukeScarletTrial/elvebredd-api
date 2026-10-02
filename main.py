@@ -1,21 +1,23 @@
-import json
 import os
 import re
-import requests
+import cloudscraper
 from fastapi import FastAPI, HTTPException
 
 app = FastAPI(title="Adopt Me Values API")
 
 URL = "https://elvebredd.com/adopt-me-calculator"
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Accept-Language": "en-US,en;q=0.9",
-}
 
 
 def fetch_pet_data():
     try:
-        response = requests.get(URL, headers=HEADERS, timeout=10)
+        scraper = cloudscraper.create_scraper(
+            browser={
+                "browser": "chrome",
+                "platform": "windows",
+                "desktop": True,
+            }
+        )
+        response = scraper.get(URL, timeout=15)
         response.raise_for_status()
         html_content = response.text
     except Exception as e:
@@ -66,6 +68,10 @@ def fetch_pet_data():
                 },
             }
         )
+
+    if not pets:
+        raise HTTPException(status_code=500, detail="No pet data could be parsed from source")
+
     return pets
 
 
