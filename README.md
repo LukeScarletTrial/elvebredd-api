@@ -237,10 +237,11 @@ Example:
 
 `regular.np` is the Regular No-Potion value.
 
+`regular.r` is the Regular Ride-Only value.
+
+`regular.f` is the Regular Fly-Only value.
+
 
 ## Side Note:
 this all started with me needing an api for a Roblox Script, for me to like calculate values directly without needing another window open since i had a tablet (still do) and doing thata te up too much ram. anyways, i looked through the whole internet, there was no value api in the internet and i made this one that atkes from elvebredd! Enjoy i guess.
 
-`regular.r` is the Regular Ride-Only value.
-
-`regular.f` is the Regular Fly-Only value.
