@@ -243,5 +243,12 @@ Example:
 
 
 ## Side Note:
-this all started with me needing an api for a Roblox Script, for me to like calculate values directly without needing another window open since i had a tablet (still do) and doing thata te up too much ram. anyways, i looked through the whole internet, there was no value api in the internet and i made this one that atkes from elvebredd! Enjoy i guess.
+this all started with me needing an api for a Roblox Script, for me to like calculate values directly without needing another window open since i had a tablet (still do) and doing thata te up too much ram. anyways, i looked through the whole internet, there was no value api in the internet and i made this one that atkes from elvebredd! Enjoy i guess. oh and before i forget i need to protect myself so here you go.
+
+## Disclaimer
+This project is an unofficial community API wrapper. 
+
+- **Data Source:** Trade values are parsed directly from public market data hosted on [Elvebredd](https://elvebredd.com). 
+- **Trademarks:** "Adopt Me!" and all associated in-game assets, pet designs, and trademarks are the property of Uplift Games LLC.
+- **Affiliation:** This project is not affiliated with, maintained by, or endorsed by Elvebredd or Uplift Games LLC.
 
