@@ -3,6 +3,7 @@ import json
 import logging
 import os
 import re
+import subprocess
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
 from playwright.async_api import async_playwright
@@ -21,6 +22,17 @@ logging.basicConfig(
 )
 
 cached_pets = []
+
+
+def ensure_playwright_installed():
+    try:
+        logging.info("Checking Playwright browser installation...")
+        subprocess.run(
+            ["python", "-m", "playwright", "install", "chromium"],
+            check=True,
+        )
+    except Exception as e:
+        logging.error(f"Failed installing browser binaries: {e}")
 
 
 def log(message, level="info"):
@@ -124,6 +136,8 @@ async def background_refresher():
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    ensure_playwright_installed()
+
     if os.path.exists(DATA_FILE):
         try:
             with open(DATA_FILE, "r", encoding="utf-8") as f:
