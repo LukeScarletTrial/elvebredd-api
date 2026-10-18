@@ -1,6 +1,7 @@
 # Elvebredd API
 
-![Cron job status](https://api.cron-job.org/jobs/8564949/c7cdbb519a6b0a95/status-1.svg)
+![Cron job status](https://api.cron-job.org/jobs/8564949/71228cbef068590a/status-0.svg)
+*succes means the service is running!
 
 Welcome to the Adopt Me! Trade Value API. This service provides pet trade values across different potion variations using Elvebredd market data.
 
